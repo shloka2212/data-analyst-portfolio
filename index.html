@@ -1041,15 +1041,6 @@
             //     throw new Error("Failed after retries");
             // }
 
-            const chatbotToggle = document.getElementById("chatbot-toggle");
-            const chatbotContainer = document.getElementById("chatbot-container");
-
-            if (chatbotToggle && chatbotContainer) {
-                chatbotToggle.addEventListener("click", () => {
-                    chatbotContainer.classList.toggle("hidden");
-                });
-            }
-
             async function getGeminiResponse(prompt, system) {
                 const res = await fetch("/api/gemini", {
                     method: "POST",
@@ -1082,17 +1073,39 @@
             const chatForm = document.getElementById('chat-form');
             const chatInput = document.getElementById('chat-input');
             const chatMessages = document.getElementById('chat-messages');
+            const chatCloseBtn = document.getElementById("chat-close-btn");
 
-            if (chatToggle) {
-                chatToggle.onclick = () => {
-                    const visible = !chatWindow.classList.contains('opacity-0');
-                    if (visible) chatWindow.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
-                    else { chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10'); chatInput.focus(); }
-                };
+            if (chatToggle && chatWindow) {
+                chatToggle.addEventListener("click", () => {
+                    const isOpen = !chatWindow.classList.contains("opacity-0");
+
+                    if (isOpen) {
+                        // Close chatbot
+                        chatWindow.classList.add("opacity-0", "pointer-events-none", "translate-y-10");
+                    } else {
+                        // Open chatbot
+                        chatWindow.classList.remove("opacity-0", "pointer-events-none", "translate-y-10");
+                    }
+                });
             }
-            if (document.getElementById('chat-close-btn')) {
-                document.getElementById('chat-close-btn').onclick = () => chatToggle.click();
+
+            // Close button (×)
+            if (chatCloseBtn) {
+            chatCloseBtn.addEventListener("click", () => {
+                chatWindow.classList.add("opacity-0", "pointer-events-none", "translate-y-10");
+            });
             }
+
+            // if (chatToggle) {
+            //     chatToggle.onclick = () => {
+            //         const visible = !chatWindow.classList.contains('opacity-0');
+            //         if (visible) chatWindow.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+            //         else { chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10'); chatInput.focus(); }
+            //     };
+            // }
+            // if (document.getElementById('chat-close-btn')) {
+            //     document.getElementById('chat-close-btn').onclick = () => chatToggle.click();
+            // }
 
             if (chatForm) {
                 chatForm.onsubmit = async (e) => {
