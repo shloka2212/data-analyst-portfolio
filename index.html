@@ -1096,16 +1096,16 @@
             });
             }
 
-            // if (chatToggle) {
-            //     chatToggle.onclick = () => {
-            //         const visible = !chatWindow.classList.contains('opacity-0');
-            //         if (visible) chatWindow.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
-            //         else { chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10'); chatInput.focus(); }
-            //     };
-            // }
-            // if (document.getElementById('chat-close-btn')) {
-            //     document.getElementById('chat-close-btn').onclick = () => chatToggle.click();
-            // }
+            if (chatToggle) {
+                chatToggle.onclick = () => {
+                    const visible = !chatWindow.classList.contains('opacity-0');
+                    if (visible) chatWindow.classList.add('opacity-0', 'pointer-events-none', 'translate-y-10');
+                    else { chatWindow.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-10'); chatInput.focus(); }
+                };
+            }
+            if (document.getElementById('chat-close-btn')) {
+                document.getElementById('chat-close-btn').onclick = () => chatToggle.click();
+            }
 
             if (chatForm) {
                 chatForm.onsubmit = async (e) => {
