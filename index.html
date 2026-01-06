@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,36 +13,46 @@
             background-color: #ffffff;
             color: #1e293b;
         }
-        
+
         .hero-bg {
-            background-image: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,1) 100%), url('https://placehold.co/1200x800/f0fdfa/0d9488?text=Data+Analytics+Visualization');
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 1) 100%), url('https://placehold.co/1200x800/f0fdfa/0d9488?text=Data+Analytics+Visualization');
             background-size: cover;
             background-position: center;
         }
 
         @keyframes pulse-turquoise {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4); }
-            50% { box-shadow: 0 0 0 15px rgba(13, 148, 136, 0); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 15px rgba(13, 148, 136, 0);
+            }
         }
+
         .animate-avatar-pulse {
             animation: pulse-turquoise 2s infinite cubic-bezier(0.66, 0, 0, 1);
         }
-        
+
         .nav-link.active {
             color: #0d9488;
             font-weight: 700;
             border-bottom: 2px solid #0d9488;
         }
-        
+
         .timeline-item {
             position: relative;
             padding-left: 2.5rem;
             padding-bottom: 2rem;
             border-left: 2px solid #99f6e4;
         }
+
         .timeline-item:last-child {
             border-left: 2px solid transparent;
         }
+
         .timeline-dot {
             position: absolute;
             left: -0.5rem;
@@ -63,15 +74,20 @@
             transition: max-height 0.3s ease-out, opacity 0.3s ease;
             opacity: 0;
         }
+
         .faq-item.active .faq-answer {
             max-height: 300px;
             opacity: 1;
             padding-bottom: 1rem;
         }
+
         .faq-item.active .faq-icon {
             transform: rotate(45deg);
         }
-        .faq-icon { transition: transform 0.3s ease; }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
 
         .chat-bubble {
             max-width: 85%;
@@ -81,17 +97,44 @@
             line-height: 1.25rem;
             margin-bottom: 0.5rem;
         }
-        .chat-bubble.bot { background-color: #f1f5f9; border-bottom-left-radius: 0; color: #334155; align-self: flex-start; }
-        .chat-bubble.user { background-color: #0d9488; border-bottom-right-radius: 0; color: #fff; align-self: flex-end; }
 
-        .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        
-        .scroll-hide::-webkit-scrollbar { display: none; }
-        .scroll-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .chat-bubble.bot {
+            background-color: #f1f5f9;
+            border-bottom-left-radius: 0;
+            color: #334155;
+            align-self: flex-start;
+        }
+
+        .chat-bubble.user {
+            background-color: #0d9488;
+            border-bottom-right-radius: 0;
+            color: #fff;
+            align-self: flex-end;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body class="antialiased">
 
     <!-- Navbar -->
@@ -102,13 +145,16 @@
                 <a href="#about" class="hover:text-teal-600 transition">About</a>
                 <a href="#skills" class="hover:text-teal-600 transition">Skills</a>
                 <a href="#projects" class="hover:text-teal-600 transition">Projects</a>
-                <a href="#contact" class="bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700 transition shadow-md">Contact Me</a>
+                <a href="#contact"
+                    class="bg-teal-600 text-white px-5 py-2 rounded-full hover:bg-teal-700 transition shadow-md">Contact
+                    Me</a>
             </div>
         </nav>
     </header>
 
     <!-- Sticky Nav -->
-    <nav id="sticky-nav" class="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm transform -translate-y-full opacity-0">
+    <nav id="sticky-nav"
+        class="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md shadow-sm transform -translate-y-full opacity-0">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
             <a href="#" class="text-xl font-bold text-teal-600">Shloka Bhatt</a>
             <div class="hidden md:flex space-x-6 text-sm font-bold">
@@ -125,13 +171,20 @@
     <section id="home" class="hero-bg min-h-screen flex items-center justify-center pt-20 px-6 text-center">
         <div class="max-w-4xl">
             <h2 class="text-teal-600 font-bold tracking-widest uppercase mb-4">Data Analyst & ETL Specialist</h2>
-            <h1 class="text-5xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">Transforming Raw Data into <span class="text-teal-600">Actionable Intelligence.</span></h1>
+            <h1 class="text-5xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">Transforming Raw Data into
+                <span class="text-teal-600">Actionable Intelligence.</span>
+            </h1>
             <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-                3.5+ years of experience building ETL pipelines and ML models for datasets exceeding 2M+ records using SQL, Python, and AWS.
+                3.5+ years of experience building ETL pipelines and ML models for datasets exceeding 2M+ records using
+                SQL, Python, and AWS.
             </p>
             <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-                <a href="#projects" class="bg-teal-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-teal-700 hover:scale-105 transition transform">View Projects</a>
-                <a href="#contact" class="bg-white border-2 border-teal-600 text-teal-600 font-bold py-4 px-8 rounded-full hover:bg-teal-50 transition transform">Get In Touch</a>
+                <a href="#projects"
+                    class="bg-teal-600 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-teal-700 hover:scale-105 transition transform">View
+                    Projects</a>
+                <a href="#contact"
+                    class="bg-white border-2 border-teal-600 text-teal-600 font-bold py-4 px-8 rounded-full hover:bg-teal-50 transition transform">Get
+                    In Touch</a>
             </div>
         </div>
     </section>
@@ -141,21 +194,27 @@
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="fade-in">
                 <div class="relative inline-block mb-8">
-                    <img src="/1732329947803.jpg" alt="Shloka Bhatt" class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-2xl border-4 border-white">
+                    <img src="/1732329947803.jpg" alt="Shloka Bhatt"
+                        class="w-64 h-64 md:w-80 md:h-80 object-cover rounded-2xl shadow-2xl border-4 border-white">
                     <div class="absolute -inset-2 rounded-2xl border-2 border-teal-500 animate-avatar-pulse"></div>
                 </div>
-                <h3 class="text-3xl font-bold mb-4">Mastering the Art of <span class="text-teal-600">Analytics</span></h3>
+                <h3 class="text-3xl font-bold mb-4">Mastering the Art of <span class="text-teal-600">Analytics</span>
+                </h3>
                 <p class="text-slate-600 leading-relaxed text-lg mb-6">
-                    I am a Computer Science graduate student at UT Arlington with a deep passion for unlocking value in complex data. My professional journey spans across analytics, ETL development, and predictive modeling. 
+                    I am a Computer Science graduate student at UT Arlington with a deep passion for unlocking value in
+                    complex data. My professional journey spans across analytics, ETL development, and predictive
+                    modeling.
                 </p>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="p-4 bg-teal-50 rounded-xl border border-teal-100">
                         <span class="block text-2xl font-bold text-teal-600">3.5+</span>
-                        <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Years Experience</span>
+                        <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Years
+                            Experience</span>
                     </div>
                     <div class="p-4 bg-teal-50 rounded-xl border border-teal-100">
                         <span class="block text-2xl font-bold text-teal-600">2M+</span>
-                        <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Records Handled</span>
+                        <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Records
+                            Handled</span>
                     </div>
                 </div>
             </div>
@@ -166,13 +225,15 @@
                 </h3>
                 <div class="space-y-8">
                     <div class="relative pl-8 border-l-2 border-slate-100">
-                        <div class="absolute left-[-9px] top-0 w-4 h-4 bg-teal-600 rounded-full border-2 border-white"></div>
+                        <div class="absolute left-[-9px] top-0 w-4 h-4 bg-teal-600 rounded-full border-2 border-white">
+                        </div>
                         <h4 class="text-xl font-bold">M.S. in Computer Science</h4>
                         <p class="text-teal-600 font-semibold">University of Texas at Arlington, USA</p>
                         <p class="text-sm text-slate-500 italic">Aug 2023 - May 2025</p>
                     </div>
                     <div class="relative pl-8 border-l-2 border-slate-100">
-                        <div class="absolute left-[-9px] top-0 w-4 h-4 bg-teal-200 rounded-full border-2 border-white"></div>
+                        <div class="absolute left-[-9px] top-0 w-4 h-4 bg-teal-200 rounded-full border-2 border-white">
+                        </div>
                         <h4 class="text-xl font-bold">B.E in Information & Communication Technology</h4>
                         <p class="text-teal-600 font-semibold">Gujarat Technological University, India</p>
                         <p class="text-sm text-slate-500 italic">Aug 2019 - Jul 2023</p>
@@ -186,10 +247,12 @@
     <section id="skills" class="py-24 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Technical <span class="text-teal-600">Stack</span></h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">Experienced in a wide range of technologies for data engineering, visualization, and automation.</p>
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Technical <span
+                        class="text-teal-600">Stack</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Experienced in a wide range of technologies for data
+                    engineering, visualization, and automation.</p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Skill Category -->
                 <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 fade-in">
@@ -198,12 +261,19 @@
                     </div>
                     <h4 class="text-xl font-bold mb-4">Analysis & Viz</h4>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Python</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">SQL</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Power BI</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Tableau</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Looker</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Pandas/NumPy</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Python</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">SQL</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Power
+                            BI</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Tableau</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Looker</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Pandas/NumPy</span>
                     </div>
                 </div>
 
@@ -214,12 +284,19 @@
                     </div>
                     <h4 class="text-xl font-bold mb-4">Data Eng & Cloud</h4>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">AWS Glue/S3</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Redshift</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Apache Spark</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Kafka</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Snowflake</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">ETL Design</span>
+                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">AWS
+                            Glue/S3</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Redshift</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Apache
+                            Spark</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Kafka</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Snowflake</span>
+                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">ETL
+                            Design</span>
                     </div>
                 </div>
 
@@ -230,12 +307,18 @@
                     </div>
                     <h4 class="text-xl font-bold mb-4">Automation & ML</h4>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Airflow</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Terraform</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">PyTorch</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">UiPath</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Docker</span>
-                        <span class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">FastAPI</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Airflow</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Terraform</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">PyTorch</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">UiPath</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">Docker</span>
+                        <span
+                            class="px-3 py-1 bg-slate-50 rounded-full text-sm font-medium border border-slate-200">FastAPI</span>
                     </div>
                 </div>
             </div>
@@ -251,12 +334,15 @@
                     <div class="timeline-dot"></div>
                     <div class="flex justify-between items-start mb-2">
                         <h4 class="text-xl font-bold text-slate-800">Data Analyst</h4>
-                        <span class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full uppercase">May 2025 - Present</span>
+                        <span class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full uppercase">May
+                            2025 - Present</span>
                     </div>
                     <p class="text-teal-600 font-bold mb-4">Tungsten Automation</p>
                     <ul class="text-slate-600 space-y-2 text-sm">
-                        <li>• Enhancing OCR workflows using Spark, SQL, and AWS S3, increasing data availability by 14%.</li>
-                        <li>• Assess audit datasets with Automation Anywhere and DynamoDB, reducing review effort by 11%.</li>
+                        <li>• Enhancing OCR workflows using Spark, SQL, and AWS S3, increasing data availability by 14%.
+                        </li>
+                        <li>• Assess audit datasets with Automation Anywhere and DynamoDB, reducing review effort by
+                            11%.</li>
                         <li>• Monitoring ETL processes using Prometheus and Grafana to improve review clarity.</li>
                     </ul>
                 </div>
@@ -264,24 +350,30 @@
                     <div class="timeline-dot"></div>
                     <div class="flex justify-between items-start mb-2">
                         <h4 class="text-xl font-bold text-slate-800">Graduate Assistant</h4>
-                        <span class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full uppercase">May 2024 - Apr 2025</span>
+                        <span class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full uppercase">May
+                            2024 - Apr 2025</span>
                     </div>
                     <p class="text-teal-600 font-bold mb-4">University of Texas at Arlington</p>
                     <ul class="text-slate-600 space-y-2 text-sm">
-                        <li>• Evaluated student retention patterns using PostgreSQL and AWS S3, improving advising visibility by 12%.</li>
-                        <li>• Designed automated workflows using Airflow and Terraform to streamline data collection (15% efficiency gain).</li>
+                        <li>• Evaluated student retention patterns using PostgreSQL and AWS S3, improving advising
+                            visibility by 12%.</li>
+                        <li>• Designed automated workflows using Airflow and Terraform to streamline data collection
+                            (15% efficiency gain).</li>
                     </ul>
                 </div>
                 <div class="timeline-item fade-in">
                     <div class="timeline-dot"></div>
                     <div class="flex justify-between items-start mb-2">
                         <h4 class="text-xl font-bold text-slate-800">Associate Data Analyst</h4>
-                        <span class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Aug 2021 - Jul 2023</span>
+                        <span class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Aug
+                            2021 - Jul 2023</span>
                     </div>
                     <p class="text-teal-600 font-bold mb-4">Birlasoft</p>
                     <ul class="text-slate-600 space-y-2 text-sm">
-                        <li>• Generated structured insights using Redshift and SQL, improving interpretation accuracy by 14%.</li>
-                        <li>• Engineered fraud analytics review flows with Alteryx and UiPath, increasing flagging efficiency by 18%.</li>
+                        <li>• Generated structured insights using Redshift and SQL, improving interpretation accuracy by
+                            14%.</li>
+                        <li>• Engineered fraud analytics review flows with Alteryx and UiPath, increasing flagging
+                            efficiency by 18%.</li>
                     </ul>
                 </div>
             </div>
@@ -299,7 +391,8 @@
     <!-- FAQ Section -->
     <section id="faq" class="py-24 px-6 bg-white">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-extrabold mb-12 text-center">Frequently Asked <span class="text-teal-600">Questions</span></h2>
+            <h2 class="text-3xl font-extrabold mb-12 text-center">Frequently Asked <span
+                    class="text-teal-600">Questions</span></h2>
             <div id="faq-container" class="space-y-4"></div>
         </div>
     </section>
@@ -308,14 +401,18 @@
     <section id="contact" class="py-24 px-6 bg-slate-50">
         <div class="max-w-7xl mx-auto text-center">
             <div class="inline-block p-4 bg-teal-100 rounded-full mb-8 text-3xl">📧</div>
-            <h2 class="text-4xl font-extrabold mb-6">Let's Build Something <span class="text-teal-600">Data-Driven</span></h2>
-            <p class="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">Currently open to Data Analyst and Data Engineering roles.</p>
-            
+            <h2 class="text-4xl font-extrabold mb-6">Let's Build Something <span
+                    class="text-teal-600">Data-Driven</span></h2>
+            <p class="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">Currently open to Data Analyst and Data
+                Engineering roles.</p>
+
             <div class="flex flex-col md:flex-row justify-center gap-8 mb-16">
-                <a href="mailto:bhatt.shloka4@gmail.com" class="flex items-center justify-center gap-3 text-lg font-bold hover:text-teal-600 transition">
+                <a href="mailto:bhatt.shloka4@gmail.com"
+                    class="flex items-center justify-center gap-3 text-lg font-bold hover:text-teal-600 transition">
                     <span>bhatt.shloka4@gmail.com</span>
                 </a>
-                <a href="https://www.linkedin.com/in/shloka-bhatt/" target="_blank" class="flex items-center justify-center gap-3 text-lg font-bold hover:text-teal-600 transition">
+                <a href="https://www.linkedin.com/in/shloka-bhatt/" target="_blank"
+                    class="flex items-center justify-center gap-3 text-lg font-bold hover:text-teal-600 transition">
                     <span>LinkedIn Profile</span>
                 </a>
                 <div class="flex items-center justify-center gap-3 text-lg font-bold">
@@ -323,16 +420,21 @@
                 </div>
             </div>
 
-            <form id="contact-form" class="max-w-xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-100 text-left">
+            <form id="contact-form"
+                class="max-w-xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-100 text-left">
                 <div class="mb-6">
                     <label class="block text-sm font-bold text-slate-700 mb-2">Full Name</label>
-                    <input type="text" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500">
+                    <input type="text" required
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500">
                 </div>
                 <div class="mb-6">
                     <label class="block text-sm font-bold text-slate-700 mb-2">Message</label>
-                    <textarea rows="4" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+                    <textarea rows="4" required
+                        class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-teal-600 text-white font-black py-4 rounded-xl shadow-lg hover:bg-teal-700 transition">Send Message</button>
+                <button type="submit"
+                    class="w-full bg-teal-600 text-white font-black py-4 rounded-xl shadow-lg hover:bg-teal-700 transition">Send
+                    Message</button>
             </form>
         </div>
     </section>
@@ -342,10 +444,14 @@
     </footer>
 
     <!-- Project Modal -->
-    <div id="project-modal" class="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="bg-white text-slate-900 w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[90vh] md:h-auto">
+    <div id="project-modal"
+        class="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div
+            class="bg-white text-slate-900 w-full max-w-4xl rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row h-[90vh] md:h-auto">
             <div class="md:w-1/2 bg-teal-50 h-64 md:h-auto flex items-center justify-center relative">
-                <div id="modal-category-badge" class="absolute top-6 left-6 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">Category</div>
+                <div id="modal-category-badge"
+                    class="absolute top-6 left-6 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    Category</div>
                 <span id="modal-emoji" class="text-8xl">📊</span>
             </div>
             <div class="md:w-1/2 p-8 overflow-y-auto">
@@ -355,7 +461,8 @@
                 </div>
                 <p id="modal-description" class="text-slate-600 text-lg mb-8 leading-relaxed">Description goes here.</p>
                 <div class="mb-8">
-                    <button id="ai-insights-btn" class="w-full bg-teal-50 text-teal-600 font-bold py-3 rounded-xl border border-teal-200 hover:bg-teal-100 transition flex items-center justify-center gap-2">
+                    <button id="ai-insights-btn"
+                        class="w-full bg-teal-50 text-teal-600 font-bold py-3 rounded-xl border border-teal-200 hover:bg-teal-100 transition flex items-center justify-center gap-2">
                         <span>✨ Ask AI for Insights</span>
                     </button>
                     <div id="ai-result" class="mt-4 hidden p-4 bg-slate-50 rounded-xl text-sm border border-teal-200">
@@ -364,15 +471,19 @@
                     </div>
                 </div>
                 <div class="flex gap-4">
-                    <a id="modal-link" href="#" target="_blank" class="flex-1 bg-slate-900 text-white text-center font-bold py-4 rounded-xl hover:bg-slate-800 transition">GitHub Repo</a>
+                    <a id="modal-link" href="#" target="_blank"
+                        class="flex-1 bg-slate-900 text-white text-center font-bold py-4 rounded-xl hover:bg-slate-800 transition">GitHub
+                        Repo</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- AI Chatbot -->
-    <button id="ai-chat-toggle" class="fixed bottom-8 right-8 w-16 h-16 bg-teal-600 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition z-50">💬</button>
-    <div id="ai-chat-window" class="fixed bottom-28 right-8 w-80 md:w-96 h-[60vh] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden z-50 border border-slate-200 opacity-0 pointer-events-none transform translate-y-10 transition-all">
+    <button id="ai-chat-toggle"
+        class="fixed bottom-8 right-8 w-16 h-16 bg-teal-600 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition z-50">💬</button>
+    <div id="ai-chat-window"
+        class="fixed bottom-28 right-8 w-80 md:w-96 h-[60vh] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden z-50 border border-slate-200 opacity-0 pointer-events-none transform translate-y-10 transition-all">
         <div class="bg-teal-600 p-4 text-white flex justify-between items-center">
             <div>
                 <h4 class="font-bold">SB Assistant</h4>
@@ -381,17 +492,18 @@
             <button id="chat-close-btn" class="text-2xl font-light">×</button>
         </div>
         <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 flex flex-col bg-slate-50">
-            <div class="chat-bubble bot">Hello! I'm Shloka's portfolio assistant. I can answer questions about her skills in Python, AWS, or her projects. What would you like to know?</div>
+            <div class="chat-bubble bot">Hello! I'm Shloka's portfolio assistant. I can answer questions about her
+                skills in Python, AWS, or her projects. What would you like to know?</div>
         </div>
         <form id="chat-form" class="p-4 border-t bg-white flex gap-2">
-            <input id="chat-input" type="text" placeholder="Type a message..." class="flex-1 px-4 py-2 bg-slate-100 rounded-full focus:outline-none text-sm">
+            <input id="chat-input" type="text" placeholder="Type a message..."
+                class="flex-1 px-4 py-2 bg-slate-100 rounded-full focus:outline-none text-sm">
             <button type="submit" class="bg-teal-600 text-white px-4 py-2 rounded-full font-bold">Send</button>
         </form>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const apiKey = "";
             const projectsData = [
                 { id: 'da1', title: "Road Accident Analysis Dashboard", category: "Data Analysis", description: "Built a Road Accident Analysis Dashboard that ingests crash incident data, performs geospatial and temporal analysis to identify hotspots and severity trends, and surfaces actionable KPIs for safety interventions. Implemented ETL using SQL and Pandas, and delivered an interactive Power BI dashboard with filters and drilldowns for stakeholders.", tags: ["SQL", "Pandas", "Survival Analysis", "Power BI"], emoji: "📈", link: "https://github.com" },
                 { id: 'da2', title: "Vendor Performance Analysis", category: "Data Analysis", description: "Analyzed supplier performance using key business metrics to identify high-performing vendors, optimize procurement strategies, and reduce costs.", tags: ["Hypothesis Testing", "Python", "Power BI", "EDA"], emoji: "📊", link: "https://github.com" },
@@ -419,7 +531,7 @@
                     div.onclick = () => {
                         const active = div.classList.contains('active');
                         document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-                        if(!active) div.classList.add('active');
+                        if (!active) div.classList.add('active');
                     };
                     faqCont.appendChild(div);
                 });
@@ -461,18 +573,16 @@
             document.getElementById('modal-close').onclick = () => modal.classList.add('pointer-events-none', 'opacity-0');
 
             async function getGeminiResponse(prompt, sys) {
-                // Local fallback when apiKey is not configured so chat still responds.
-                if (!apiKey) {
-                    // Keep the fallback short and useful so the UI looks responsive.
-                    const preview = prompt.length > 180 ? prompt.slice(0, 180) + '...' : prompt;
-                    return `(Local) AI is not configured. Set apiKey in the script to enable live responses. Meanwhile, I received: "${preview}"`;
-                }
+                const url = '/api/gemini';
+                const payload = { prompt: prompt, systemInstruction: sys };
 
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-                const payload = { contents: [{ parts: [{ text: prompt }] }], systemInstruction: { parts: [{ text: sys }] } };
                 for (let i = 0; i < 3; i++) {
                     try {
-                        const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                        const res = await fetch(url, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
                         if (!res.ok) {
                             const text = await res.text();
                             throw new Error(`Status ${res.status}: ${text}`);
@@ -547,4 +657,5 @@
         });
     </script>
 </body>
+
 </html>
