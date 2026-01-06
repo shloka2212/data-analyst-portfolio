@@ -10,6 +10,12 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Prompt is required' });
   }
 
+  // Check if API key is configured
+  if (!process.env.GEMINI_API_KEY) {
+    console.error('GEMINI_API_KEY environment variable is not set');
+    return res.status(500).json({ error: 'API key not configured' });
+  }
+
   try {
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
@@ -23,16 +29,21 @@ export default async function handler(req, res) {
       }
     );
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Gemini API error:', errorText);
-      return res.status(response.status).json({ error: 'AI service error' });
+      console.error('Gemini API error:', response.status, JSON.stringify(data));
+      // Pass through the actual error message from Gemini
+      const errorMessage = data?.error?.message || 'AI service error';
+      return res.status(response.status).json({
+        error: errorMessage,
+        status: response.status
+      });
     }
 
-    const data = await response.json();
     return res.status(200).json(data);
   } catch (error) {
-    console.error('Server error:', error);
-    return res.status(500).json({ error: 'Internal server error' });
+    console.error('Server error:', error.message);
+    return res.status(500).json({ error: error.message || 'Internal server error' });
   }
 }
