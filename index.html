@@ -649,7 +649,13 @@
                         const res = await getGeminiResponse(q, `You are SB-Assistant. Context: ${portfolioContext}`);
                         thinking.textContent = res;
                         thinking.classList.remove('italic', 'text-slate-400');
-                    } catch (e) { thinking.textContent = "Error occurred."; }
+                    } catch (e) {
+                        if (e.message.includes('429')) {
+                            thinking.textContent = "Rate limit reached. Please try again in a minute.";
+                        } else {
+                            thinking.textContent = "Service temporarily unavailable. Please try again.";
+                        }
+                    }
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                 };
             }
